@@ -4,11 +4,12 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import { Container } from '@mui/material';
 import Button from '@mui/material/Button';
 import Logo from '../../../Assets/images/logo.png'
 import Flight from "../../../Assets/images/flight.jpg"
- 
+import { Link } from 'react-router-dom';
+
+
 export default function Homepage() {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -24,19 +25,19 @@ export default function Homepage() {
             sx={{ mr: 2 }}
           >
           </IconButton>
-          <img src={Logo} alt="G" style={{width:'70px',height:"50px",borderRadius:"5px"}}></img>
-          <Typography variant="h6" component="div" sx={{ marginLeft:1,fontFamily:"roboto",fontWeight:"bold",fontSize:"1.5rem"}}>
-              Happy Trip
+          <img src={Logo} alt="G" style={{ width: '70px', height: "50px", borderRadius: "5px" }}></img>
+          <Typography variant="h6" component="div" sx={{ marginLeft: 1, fontFamily: "roboto", fontWeight: "bold", fontSize: "1.5rem" }}>
+            Happy Trip
           </Typography>
         </Toolbar>
       </AppBar><div sx={{ flexDirection: 'column' }}>
-         <img src={Flight} alt="G"  width="100%" height="auto " />
-           <Container sx={{align:"value"}}> 
-           <Button><Typography variant="h6" component="div" sx={{ marginLeft:"35vh" ,marginTop:"-170vh",fontSize:50,align:"center"}}> Welcome To Happy Trip</Typography></Button>
-           <Button sx={{ marginLeft:"70vh" ,marginTop:"-150vh",fontSize:30}} variant="contained">Book Here</Button>
- </Container>
-      
-      
+        <img src={Flight} alt="G" width="100%" height="auto " />
+        {/* <Container sx={{ align: "value" }}> */}
+        <Typography variant="h6" component="div" sx={{ textAlign: "center", marginTop: "-80vh", fontSize: 50, align: "center" }}> Welcome To Happy Trip</Typography>
+        <Link to="/home"><Button sx={{
+          fontSize: 20, display: "flex", direction: "column", display: "block", margin: "auto"
+        }} variant="contained">Book Here</Button></Link>
+        {/* </Container> */}
       </div>
     </Box>
   );
